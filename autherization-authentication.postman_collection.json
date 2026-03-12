@@ -1,0 +1,187 @@
+{
+  "info": {
+    "_postman_id": "ddd75f3d-a05a-4f88-9b74-33648ede248a",
+    "name": "autherization-authentication",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52373912",
+    "_collection_link": "https://go.postman.co/collection/52373912-ddd75f3d-a05a-4f88-9b74-33648ede248a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "get",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://autherization-authentication.onrender.com/",
+          "protocol": "https",
+          "host": [
+            "autherization-authentication",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "user registration",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"karthik\",\r\n  \"email\": \"karthik@example.com\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://autherization-authentication.onrender.com/api/users/register",
+          "protocol": "https",
+          "host": [
+            "autherization-authentication",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "users",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "registrar exists error",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"karthik\",\r\n  \"email\": \"karthik@example.com\",\r\n  \"password\": \"123456\"\r\n}"
+        },
+        "url": {
+          "raw": "https://autherization-authentication.onrender.com/api/users/register?",
+          "protocol": "https",
+          "host": [
+            "autherization-authentication",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "users",
+            "register"
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": null,
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login user",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"karthik@example.com\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://autherization-authentication.onrender.com/api/users/login",
+          "protocol": "https",
+          "host": [
+            "autherization-authentication",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "users",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "protected route",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjE3NmQ2N2U1MGY4ZGM2NzA4OTljNiIsImlhdCI6MTc3MzIzODU2MywiZXhwIjoxNzczMjQyMTYzfQ.AlFTHrvoQaoJyOHa8BCkXfjF29FA_d9gpUw4uXwiYNg",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://autherization-authentication.onrender.com/api/users/profile",
+          "protocol": "https",
+          "host": [
+            "autherization-authentication",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "users",
+            "profile"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
